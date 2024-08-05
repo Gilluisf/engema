@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Services</title>
+    <!--JQUERY-->
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+    <!--MATERIALIZE-->
+    <script src="libs/materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="libs/materialize/css/icons.css">
+    <style>
+    .hero {
+        background: url('img/tutoring-africa.jpg') no-repeat center center/cover;
+        height: 80vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .services {
+        padding: 50px 0;
+    }
+    </style>
+    <!--IZI_MODAL-->
+    <link href="libs/iziModal/css/iziModal.min.css" rel="stylesheet" type="text/css">
+    <script src="libs/iziModal/js/iziModal.min.js"></script>
+    <!--JQUERY LOADING MODAL-->
+    <link rel="stylesheet" href="libs/jquery-loadingModal/css/jquery.loadingModal.css">
+    <script src="libs/jquery-loadingModal/js/jquery.loadingModal.js"></script>
+    <!--FIREBASE-->
+    <script src="libs/firebase/firebase-app.js"></script>
+    <script src="libs/firebase/firebase-database.js"></script>
+    <script src="libs/firebase/firebase-auth.js"></script>
+    <!--SUREVEY JS-->
+    <script type="text/javascript" src="libs/surveyjs/survey.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/surveyjs/defaultV2.min.css">
+    <!--USERS-->
+    <script type="text/javascript" src="js/apis/user/model.js"></script>
+    <!--APIS-->
+    <script type="text/javascript" src="js/apis/go-back.js"></script>
+    <script type="text/javascript" src="js/apis/easy-events.js"></script>
+    <script type="text/javascript" src="js/apis/izi-modal.js"></script>
+    <!--LOADING MODAL-->
+    <script type="text/javascript" src="js/apis/loading-modal.js"></script>
+    <!--PERMANENT SURVEY JS-->
+    <script type="text/javascript" src="js/apis/permanent-survey.js"></script>
+    <!--ABSTRACT VIEW-->
+    <script type="text/javascript" src="js/apis/abstract-view.js"></script>
+    <!--INIT FIREBASE-->
+    <script type="text/javascript" src="js/init-firebase.js"></script>
+        <!--LIST-->
+    <script type="text/javascript" src="js/apis/list/model.js"></script>
+        <!--CREDENTIALS MANAGER-->
+    <script type="text/javascript" src="js/apis/credential-manager.js"></script>
+    <!--AUTH-->
+    <script type="text/javascript" src="js/apis/auth/controller.js"></script>
+
+    <script type="text/javascript" src="js/apis/auth/view.js">
+    </script>
+    <script type="text/javascript" src="js/apis/auth/view/auth.js"></script>
+    <script type="text/javascript" src="js/apis/auth/view/sign-in.js"></script>
+    <script type="text/javascript" src="js/apis/auth/view/sign-up.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Engema</a>
+            <!--ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a class="waves-effect waves-light btn" href="#register">Register</a></li>
+                <li><a class="waves-effect waves-light btn" href="#login">Login</a></li>
+            </ul-->
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container center">
+            <h1>Welcome to Tutoring Services</h1>
+            <a href="javascript:" id="create-account" class="btn-large waves-effect waves-light green">Criar conta</a>
+            <a href="javascript:" id="sign-in" class="btn-large waves-effect waves-light teal">Iniciar sessão</a>
+            <a href="javascript:" id="enter" class="btn-large waves-effect waves-light teal" style="display: none;">Entrar</a>
+        </div>
+    </div>
+    <!-- Services Section -->
+    <div class="container services" id="services">
+        <div class="row">
+            <h2 class="center">Our Services</h2>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center teal-text"><i class="material-icons">school</i></h2>
+                    <h5 class="center">Personal Tutoring</h5>
+                    <p class="light">We offer one-on-one personal tutoring sessions tailored to your specific needs.</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center teal-text"><i class="material-icons">group</i></h2>
+                    <h5 class="center">Group Classes</h5>
+                    <p class="light">Join our group classes and learn together with peers in a collaborative environment.</p>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center teal-text"><i class="material-icons">laptop</i></h2>
+                    <h5 class="center">Online Courses</h5>
+                    <p class="light">Access our online courses and learn at your own pace from the comfort of your home.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Tutoring Services</h5>
+                    <p class="grey-text text-lighten-4">We offer personalized tutoring services to help you achieve your academic goals.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 Tutoring Services. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript">
+const auth = new AuthController
+
+let signInButton = document.querySelector('#sign-in')
+let createAccountButton = document.querySelector('#create-account')
+let enterButton = document.querySelector("#enter")
+
+signInButton.addEventListener('click', () => auth.view.signIn.open())
+
+createAccountButton.addEventListener('click', () => auth.view.signUp.open())
+
+LoadingModal.show()
+firebase.auth().onAuthStateChanged(()=>LoadingModal.hide())
+
+function authHandler(user) {
+
+    if (user) {
+        enterButton.style.display = 'inline-block'
+        enterButton.href = 'user.html'
+        signInButton.style.display = 'none'
+        createAccountButton.style.display = 'none'
+    } else {
+
+    }
+    
+}
+
+firebase.auth().onAuthStateChanged(authHandler)
+</script>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    <!--JQUERY-->
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+
+    <!--MOMENT JS-->
+    <script type="text/javascript" src="libs/moment.min.js"></script>
+    
+    <!--JS PDF-->
+    <script type="text/javascript" src="libs/jspdf/html2canvas.min.js"></script>
+    <script src="libs/jspdf/jspdf.umd.min.js"></script>
+    
+    <!--JSON SERIALIZER-->
+    <script type="text/javascript" src="libs/jquery.serializeJSON/jquery.serializejson.min.js"></script>
+
+    <!--MATERIALIZE-->
+    <script src="libs/materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="libs/materialize/css/icons.css">
+
+     <!--IZI_MODAL-->
+    <link href="libs/iziModal/css/iziModal.min.css" rel="stylesheet" type="text/css">
+    <script src="libs/iziModal/js/iziModal.min.js"></script>
+
+    <!--JQUERY LOADING MODAL-->
+    <link rel="stylesheet" href="libs/jquery-loadingModal/css/jquery.loadingModal.css">
+    <script src="libs/jquery-loadingModal/js/jquery.loadingModal.js"></script>
+
+    <!--FIREBASE-->
+    <script src="libs/firebase/firebase-app.js"></script>
+    <script src="libs/firebase/firebase-database.js"></script>
+    <script src="libs/firebase/firebase-auth.js"></script>
+<script src="libs/firebase/firebase-storage.js"></script>
+    <!--SUREVEY JS-->
+    <script type="text/javascript" src="libs/surveyjs/survey.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/surveyjs/defaultV2.min.css">
+
+    <!--EXTENSO JS-->
+    <script type="text/javascript" src="libs/extenso.min.js"></script>
+    <!--APIS-->
+
+    <script type="text/javascript" src="js/apis/easy-events.js"></script>
+    <script type="text/javascript" src="js/apis/izi-modal.js"></script>
+    <script type="text/javascript" src="js/apis/text-editor.js"></script>
+    <script type="text/javascript" src="js/apis/go-back.js"></script>
+        <!--MATERIALIZE TABS -->
+    <script type="text/javascript" src="js/apis/materialize-tabs.js"></script>
+    <!--LOADING MODAL-->
+    <script type="text/javascript" src="js/apis/loading-modal.js"></script>
+    <!--PERMANENT SURVEY JS-->
+    <script type="text/javascript" src="js/apis/permanent-survey.js"></script>
+    <!--ABSTRACT VIEW-->
+    <script type="text/javascript" src="js/apis/abstract-view.js"></script>
+
+    <!--LIST-->
+    <script type="text/javascript" src="js/apis/list/model.js"></script>
+    <!--USERS-->
+    <script type="text/javascript" src="js/apis/user/model.js"></script>
+    <script type="text/javascript" src="js/apis/user/controller.js"></script>
+    <script type="text/javascript" src="js/apis/user/view.js"></script>
+
+    <!--BOOK-->
+    <script type="text/javascript" src="js/apis/books/book-view.js"></script>
+    <script type="text/javascript" src="js/apis/books/view.js"></script>
+    <script type="text/javascript" src="js/apis/books/controller.js"></script>
+    <script type="text/javascript" src="js/apis/books/model.js"></script>
+
+    <!--PRICES-->
+    <script type="text/javascript" src="js/apis/prices/table-row.js"></script>
+    <script type="text/javascript" src="js/apis/prices/view.js"></script>
+    <script type="text/javascript" src="js/apis/prices/model.js"></script>
+    <script type="text/javascript" src="js/apis/prices/controller.js"></script>
+
+    <!--ADD SUBSCRIPTION-->
+    <script type="text/javascript" src="js/apis/add-subscription/view.js"></script>
+    <script type="text/javascript" src="js/apis/add-subscription/model.js"></script>
+    <script type="text/javascript" src="js/apis/add-subscription/controller.js"></script>
+
+    <!--PROFILE-->
+    <script type="text/javascript" src="js/apis/profile/view.js"></script>
+    <script type="text/javascript" src="js/apis/profile/model.js"></script>
+    <script type="text/javascript" src="js/apis/profile/controller.js"></script>
+
+    <!--PHONE NUMBER-->
+    <script type="text/javascript" src="js/apis/phone/view.js"></script>
+    <script type="text/javascript" src="js/apis/phone/model.js"></script>
+    <script type="text/javascript" src="js/apis/phone/controller.js"></script>
+
+    <!--SUBSCRIPTION-->
+    <script type="text/javascript" src="js/apis/subscriptions/single-subscription-view.js"></script>
+    <script type="text/javascript" src="js/apis/subscriptions/view.js"></script>
+    <script type="text/javascript" src="js/apis/subscriptions/model.js"></script>
+    <script type="text/javascript" src="js/apis/subscriptions/controller.js"></script>
+
+    <!--TUTOR-->
+    <script type="text/javascript" src="js/apis/tutors/single-user-view.js"></script>
+    <script type="text/javascript" src="js/apis/tutors/view.js"></script>
+    <script type="text/javascript" src="js/apis/tutors/model.js"></script>
+    <script type="text/javascript" src="js/apis/tutors/controller.js"></script>
+            <!--CREDENTIALS MANAGER-->
+    <script type="text/javascript" src="js/apis/credential-manager.js"></script>
+    <!--MESSAGES CARD -->
+    <script type="text/javascript" src="js/apis/chat/view/message/card.js"></script>
+    <script type="text/javascript" src="js/apis/chat/view/message/text.js"></script>
+    <script type="text/javascript" src="js/apis/chat/view/message/file.js"></script>
+    <!--- CHAT -->
+    <script type="text/javascript" src="js/apis/chat/controller.js" defer></script>
+    <script type="text/javascript" src="js/apis/chat/model.js"></script>
+    <script type="text/javascript" src="js/apis/chat/view/progress-bar.js"></script>
+    <script type="text/javascript" src="js/apis/chat/view/contact-container.js"></script>
+    <script type="text/javascript" src="js/apis/chat/view/chat-screen.js"></script>
+    <!--CHAT FORM-->
+    <link rel="stylesheet" type="text/css" href="js/apis/chat/view/form/upload-file.css">
+    <script type="text/javascript" src="js/apis/chat/view/form/upload-file.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/apis/chat/view/form/sound-recorder.css">
+    <script type="text/javascript" src="js/apis/chat/view/form/sound-recorder.js"></script>
+
+    <script type="text/javascript" src="js/apis/chat/view/form/chat-form.js"></script>
+    <!--MAIN CHAT VIEW-->
+    <script type="text/javascript" src="js/apis/chat/view.js"></script>
+        <!--INIT FIREBASE-->
+    <script type="text/javascript" src="js/init-firebase.js"></script>
+    <script type="text/javascript" src="js/apis/app-controller.js"></script>
+    <!--DEFAULT STYLE-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--CHAT LIST-->
+    <link rel="stylesheet" type="text/css" href="css/chat-list.css">
+    <link rel="stylesheet" type="text/css" href="css/chat-form.css">
+    <link rel="stylesheet" type="text/css" href="css/chat-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/chat-body.css">
+    <link rel="stylesheet" type="text/css" href="css/file-message.css">
+    <link rel="stylesheet" type="text/css" href="css/chat-header.css">
+    <!--OVERFLOW TABLE-->
+    <link rel="stylesheet" type="text/css" href="css/overflow-table.css">
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="green darken-4">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo left" onclick="$('.sidenav').sidenav('open');"><i class="material-icons">menu</i></a>
+            <a class="brand-logo center" style="font-size: 10pt;">Sistema de gestão da engema</a>
+        </div>
+    </nav>
+    <!--SIDENAV-->
+    <ul id="slide-out" class="sidenav">
+        <li><a href="how-to-use.html">Como usar</a></li>
+        <li><a id="sign-out">Sair</a></li>
+    </ul>
+
+    <!--TABS CONTAINER-->
+    <div class="row">
+        <div class="col s12 green darken-4">
+            <ul class="tabs tabs-fixed-width tab-demo z-depth-1 green darken-4">
+                <li class="tab col s3">
+                    <a href="#subscriptions">Inscrições</a>
+                </li>
+
+                <li class="tab col s3">
+                    <a href="#library" >Biblioteca</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#tutors">Tutores</a>
+                </li>
+                                <li class="tab col s3">
+                    <a href="#users">Usuarios</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#prices">Preços</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#profile" class="active">Perfil</a>
+                </li>
+            </ul>
+        </div>
+        <!--SUBSCRIPTIONS-->
+        <div id="subscriptions" class="col s12">
+            <div class="container">
+                <a href="#" id="make-subscription-btn" class="btn"> Fazer inscrição</a>
+            </div>
+            <div id="add-subscription" class="iziModal">
+                <div id="add-subscription-form"></div>
+            </div>
+
+            <div class="container">
+                <h4 class="header">Lista de inscrições</h4>
+            </div>
+
+            <div class="overflow-table">
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>Telefone</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--LIBRARY-->
+        <div id="library" class="col s12">
+            <button class="btn" id="add-book-btn">Adicionar livro</button>
+            <div class="container">
+                
+            </div>
+
+        </div>
+        <!--TUTORS-->
+        <div id="tutors" class="col s12">
+
+        </div>
+        
+        <!--USERS-->
+        <div id="users" class="col s12">
+        </div>
+
+        <!--PRICES-->
+        <div id="prices" class="col s12">
+            <div class="container">
+                <form action="javascript:">
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            
+                            <label>Classe</label>
+                            <input id="subject-grade" type="number" minlength="1" name="grade" required>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <label for="subject-price">Disciplina</label>
+                            <input id="subject-price" type="text" minlength="1" name="subject" required>
+                        </div>
+                    </div>
+                    <div class="input-field col s6">
+
+                        <input id="icon_telephone" type="number" min="1" name="price" class="validate">
+                        <label for="icon_telephone">Preço por mês</label>
+                    </div>
+                    <div class="input-field col s6">
+
+                        <button class="btn" type="submit">Salvar</button>
+                    </div>
+
+
+                </form>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Classe</th>
+                            <th>Disciplina</th>
+                            <th>Preco mensal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div-->
+    <div id="profile">
+        <div id="profile-form"></div>
+    </div>
+    
+    
+
+</body>
+    <script type="text/javascript" src="js/index.js" defer></script>
+    <!--script src="js/add-tutor.js" ></script>
+    <script src="js/add-book.js" ></script-->
+    <script type="text/javascript">
+    
+    </script>
+ 
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="libs/materialize/css/icons.css">
+    <!--JQUERY-->
+    <script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+    <!--JSON SERIALIZER-->
+    <script type="text/javascript" src="libs/jquery.serializeJSON/jquery.serializejson.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!--h2>Adicionar Livro</h2-->
+        <form action="javascript:">
+            <div class="input-field">
+                <input id="title" type="text" class="validate" name="title" required>
+                <label for="title">Título</label>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <input id="grade" name="grade" type="number" class="validate" required>
+                    <label for="grade">Classe</label>
+                </div>
+
+                <div class="input-field">
+                    <input id="subject" name="subject" type="text" class="validate" required>
+                    <label for="subject">Disciplina</label>
+                </div>
+            </div>
+            <div class="input-field">
+                <input id="link" name="link" type="url" class="validate" required>
+                <label for="link">Link</label>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Capa</span>
+                    <input type="file" name="cover" accept="image/*" required>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Adicionar Livro
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+    <script src="libs/materialize/js/materialize.min.js"></script>
+    <script>
+    function convertImageToBase64(input) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(input.files[0]);
+        });
+    }
+
+    document.forms[0].addEventListener('submit', async function() {
+        var data = $(this).serializeJSON();
+        data.grade = Number(data.grade)
+        var inputFile = this.querySelector('[type=file]')
+        data.cover = await convertImageToBase64(inputFile)
+        data.type = 'iframe'
+        parent.postMessage(data, '*')
+    })
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+    </script>
+</body>
+
+</html>
