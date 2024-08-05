@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Conversion</title>
+    <script type="text/javascript" src="html2canvas.min.js"></script>
+    <script src="jspdf.umd.min.js"></script>
+</head>
+<body>
+	<style type="text/css">
+	#pdf{
+
+		font-family: Arial;
+	}
+	
+	</style>
+	<meta name="viewport" content="width=device-width" >
+    <div id="container">
+    <div contenteditable="" id="pdf" style="color: black; background: white; font-size: 9.7pt;text-align: justify; width: 362pt; line-height:auto; ">
+        <!--h1>Universidade Licungo</h1-->
+        <!--b style="text-align: left;">2 Teoria de instrução e do ensino: a didáctica como actividade pedagógica escolar; 
+        desenvolvimento histórico da didáctica e tendências pedagógicas e didáctica e as tarefas 
+        do professor
+        </b-->
+    
+
+<p class="h1" style="margin-block-end: -12pt;">4.1. Eficiência das escolas</p>
+<p>A eficiência das escolas é dependente da participação ativa de todos os seus integrantes, corpo do docente, corpo administrativo, alunos, etc.</p>
+
+<p>Segundo Gonçalo(2015), pode-se acreditar que a maioria da qualidade da educação pode ser obtida com a aplicação de competência profissional escolas, sendo eles capazes de organizar, liderar e orientar as ações, processos desempenhados pela escola, processos esses que promovem a aprendizagem e formação dos alunos, o desenvolvimento de competências profissionais dos gestores. Podem contradizer as tendências atuais das escolas de Moçambique, onde nota-se um desleixo por parte dos administradores, gestores do corpo do centro. Tanto os profissionais como os gestores da escola devem receber uma forma de apoio institucional e um acompanhamento adequado para construir novas competências que serão pertinentes nos ciclos de aprendizagem e reverter a situação preocupante. A escola é muitas vezes vista de forma isolada, como se não integrasse numa comunidade e que não interagisse com a vida social afora. As atuais formas de interação entre a escola e a comunidade exigem cada vez mais a participação dos pais na organização e gestão da escola, criando práticas de descentralização,autonomia, corresponsabilização, interculturalismo(Gonçalo, 2013). A eficácia das escolas, tal como tudo, depende de meios financeiros e materiais que em Moçambique ainda é difícil de fazer. Chegas a ela visto que até comida e água potável ainda sequer é acessível a todo o povo moçambicano. Em uma pesquisa, (Gonçalo, 2015) constataram que as escolas não têm os meios e as pessoas necessárias para cumprir o seu papel, tanto que é apontado pelos membros da direção das instituições um número considerável de fatores que se interrelacionam organizacionais, sociais e pessoais que devem ser levados em conta, visto que, de alguma forma, impedem a aplicação das suas habilidades para um bom desempenho das suas funções. Um dos fatores importantes apontados pelos diretores baseia-se na falta de material didima dos professores, deixando-os preocupados em não realizarem o seu trabalho como gostariam por falta de meios e condições de trabalho. Outro fato preocupante é a falta de professores em Moçambique, que exige um Mined, que é a instância senior legal reguladora da educação aqui, que é a instância senior legal reguladora da educação aqui, em ação rápida, urgente e efetiva. Amplo do exemplo, a exigência anual de professores para o ensino primário do período de 2000 foi estimada em aproximadamente 10 mil, enquanto a instituição de formação de professores como o todo graduou cerca de 5 mil professores anualmente e, por consequência, o MiNEDH durante alguns anos, executaram professores sem formação relevante, o que teve impacto negativo na qualidade da educação. o que teve impacto negativo na qualidade da educação.</p>
+
+<p class="h1" style="margin-block-end: -12pt;">4.2. Qualificação dos professores</p>
+<p>O atual periodo é caracterizado por um múmero crescente de institutos de formação de professores que obviamente visam primariamente garantir a formação de professores qualificados a responder as especifica, des médias possíveis e a demanda dos mesmos no território moçambicanog Por a educação depender da formação em serviço, devem ser viabilizados esforços para garantir uma boa qualidade na formação dos futuros formadores.</p>
+    </div>
+</div>
+    <button id="generatePdf" onclick="generatePDF()">Generate PDF</button>
+
+<div id="subscription" style="width: 362pt">
+    <!--img src="logo.png" style="height: 40pt;" -->
+    <p style="text-align: center;">
+        <b>Ficha de Inscrição da 11ª classe</b>
+    </p>
+    
+    <table border="1" style="width: inherit;">
+        <tr>
+            <td style="text-align:center;" colspan="2">Pagamento da Inscrição</td>
+        </tr>
+        <tr>
+            <td>Numerário</td>
+            <td>1300.MZN</td>
+        </tr>
+        <tr>
+            <td>Extenso</td>
+            <td>Mil e Trezentos Meticais</td>
+        </tr>
+    </table>
+
+
+
+
+    <h5>Informação do Estudante</h5>
+    <p><strong>I. Nome Completo:</strong> António João</p>
+    <p><strong>II. Idade:</strong> 16</p>
+    <p><strong>III. Sexo:</strong> Masculino</p>
+    <p><strong>IV. Classe:</strong> 11ª</p>
+    <p><strong>V. Período de Explicação:</strong> Nas manhãs</p>
+    <p><strong>VI. Deficiência:</strong> Auditiva</p>
+    <p><strong>VIII. Disciplina que deseja ser explicado:</strong> Geografia, Quimica, Biologia, Java, Telp, Temas transversal.</p>
+    <p><strong>IX. Nome do Encarregado de Educação:</strong> Martins Mario</p>
+    <p><strong>X. Ocupação:</strong> Professor</p>
+    <p><strong>XI. Contactos:</strong></p>
+    <ul>
+        <li>Celular1: 878485633</li>
+        <li>Celular 2: 841111111</li>
+        <li>E-mail: Gil@gmail.com</li>
+    </ul>
+
+</div>
+    
+<script>
+    
+    var div = document.querySelector("div")
+    
+    
+    //alert(html2canvas)
+        function generatePDF (elem = document.querySelector("div")) {
+            const pdf = new jspdf.jsPDF('p', 'pt', [ 612.288,  790.872]);
+            //pdf.setFontSize(2)
+            /*
+            text = pdf.splitTextToSize(text,150)
+            text = text.slice(0, 31)
+            pdf.text(text.join("\n"), 30,30,{align: 'left'})
+            pdf.save()*/
+            var margin = {
+            	top: 60,
+                left: 80,
+            	bottom: 40,
+            	right: 40
+            }
+            
+            pdf.html(elem, {
+            	
+            	margin: [margin.top, margin.right, margin.bottom, margin.left],
+            	autoPaging: "text",
+            	filename:"t.pdf",
+               	//x: 57,
+               	//y: 57,
+                autoPaging: true, // Enable auto-paging
+                callback:(doc) => doc.save()
+            })
+        }
+        //onerror=alert
+        
+        
+</script>
+<script type="text/javascript" src="text.js"></script>
+</body>
+</html>

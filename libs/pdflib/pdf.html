@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width"  >
+    <meta charset="UTF-8">
+    <title>PDF Generator</title>
+</head>
+<body>
+
+    <h1 id="pdfTitle">Your PDF Title</h1>
+        <input type="file" id="fileInput" accept=".pdf" />
+		<button onclick="readFile()">botao</button>
+	<script type="text/javascript" src="read-file.js"></script>
+    <script src="pdf-lib.js"></script>
+    <script>
+    onerror = alert
+    
+        // Function to generate the PDF
+        async function generatePDF(bytesContent) {
+            try{
+            // Import the pdf-lib library
+            const { PDFDocument, rgb, StandardFonts } = PDFLib;
+            
+            // Create a new PDFDocument
+            const pdfDoc = await PDFDocument.load(bytesContent)//  await PDFDocument.create()
+            
+            // Embed the Times Roman font
+            const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman)
+            
+            // Add a blank page to the document
+            const page = pdfDoc.getPages()[0] //.addPage([595,842])
+            
+            //Adding second page
+            //pdfDoc.addPage([595,842])
+            // Get the width and height of the page
+            const { width, height } = page.getSize()
+            
+            // Draw a string of text toward the top of the page
+            const fontSize = 12
+            page.drawText('Creating PDFs in JavaScript is awesome!\n'.repeat(70), {
+            	x: 100,
+            	y: height - 4 * fontSize *2,
+            	size: fontSize,
+            	font: timesRomanFont,
+            	color: rgb(0, 0.53, 0.71),
+            	maxWidth:100
+            })
+            
+            // Serialize the PDF to bytes
+            const pdfBytes = await pdfDoc.save();
+
+            // Create a blob and URL for downloading
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+
+            // Create a download link and trigger the download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'generated-pdf.pdf';
+            a.click();
+            } catch(e){
+            	alert(e)
+            }
+        }
+
+        // Attach the generatePDF function to the button click event
+        //document.getElementById('generatePdfButton').addEventListener('click', generatePDF);
+    </script>
+</body>
+</html>
