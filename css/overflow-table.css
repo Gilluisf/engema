@@ -1,0 +1,9 @@
+.overflow-table{
+	max-width: 100%;
+	overflow: auto;
+	
+}
+
+.overflow-table table{
+	width: auto;
+}

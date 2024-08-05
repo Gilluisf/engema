@@ -1,0 +1,18 @@
+.nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f5f5f5;
+      color: #000;
+      margin-left: 20px;
+      margin-right: 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }

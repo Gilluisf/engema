@@ -1,0 +1,46 @@
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+ }
+
+ .col[id] {
+     padding-top: 10px;
+ }
+
+ .tabs .tab a {
+     color: white;
+ }
+
+
+ /*Hide default surevy js button*/
+ input.sd-btn.sd-btn--action.sd-navigation__complete-btn {
+     display: none;
+ }
+
+ #print-subscription {
+     color: black;
+     background: white;
+     font-size: 9.7pt;
+     text-align: justify;
+     width: 362pt;
+     line-height: auto;
+
+ }
+
+ #print-subscription td {
+     padding: 2pt;
+     border: 1pt solid black;
+ }
+
+ #print-subscription ul.student-information {
+     list-style: upper-roman;
+ }
+
+ #print-subscription b,
+ #print-subscription strong {
+     font-weight: bold;
+ }
+
+
+ 

@@ -1,0 +1,22 @@
+.file-message, .contact-container{
+    display: grid;
+    
+    grid-template-columns: auto 1fr auto;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+.file-message > div,  .contact-container div{
+    padding: 10px;
+}
+
+.file-message .download i{
+    cursor: pointer;
+    color: white;
+}
+
+.centered-vertically{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

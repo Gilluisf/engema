@@ -1,0 +1,69 @@
+/*RECORDING*/
+
+ /*START*/
+ .recorder[state="start"] h4::before {
+     content: 'Gravar mensagem';
+ }
+
+ .recorder[state="start"] .stop-button,
+ .recorder[state="start"] .send-button {
+     display: none;
+ }
+
+ /*RECORDING*/
+ .recorder[state="recording"] h4::before {
+     content: 'Gravando...';
+ }
+
+ .recorder[state="recording"] .record-button,
+ .recorder[state="recording"] .send-button {
+     display: none;
+ }
+
+ .recorder[state="recording"] .btn-large.red.pulse {
+     display: inline-block;
+     scale: 1.5;
+ }
+
+ .recorder[state="recording"] i.red-text {
+     display: none;
+ }
+
+ /*SEND*/
+ .recorder[state="send"] h4::before {
+     content: 'Gravacao terminada';
+ }
+
+ .recorder[state="send"] .stop-button {
+     display: none;
+ }
+
+ .recorder[state="send"] audio {
+     display: inline-block;
+ }
+
+ .recorder[state="send"] i.red-text {
+     display: none;
+ }
+
+ .recorder[state="send"] i.green-text {
+     display: inline-block;
+ }
+
+ /*AUDIO*/
+ .recorder audio {
+     display: none;
+ }
+
+ .recorder .btn-large.red.pulse {
+     display: none;
+ }
+
+ .recorder i.green-text {
+     display: none;
+ }
+
+div[class="col s12 active"]{
+    min-height: 90vh;
+    overflow: auto;
+}

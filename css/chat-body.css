@@ -1,0 +1,51 @@
+.messages-list {
+    overflow: auto;
+}
+
+.chat-wrapper {
+    margin: 1px;
+}
+
+.message {
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    position: relative;
+    width: fit-content;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.message audio {
+    width: 150pt;
+}
+
+.message img {
+    max-height: 200pt;
+    max-width: 271pt
+}
+
+.message.sender {
+    background-color: #1b5e20;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.receiver {
+    background-color: #e65100;
+    margin-right: auto;
+    text-align: left;
+}
+
+.message.receiver .timestamp {
+    text-align: left;
+}
+
+.message .timestamp {
+    font-size: 12px;
+
+    display: block;
+    margin-top: 5px;
+}

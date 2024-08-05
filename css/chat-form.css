@@ -1,0 +1,29 @@
+ .chat-form {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+.chat-form * {
+     transition:  0.1 all;
+}
+.chat-form .file-buttons{
+     display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 2pt;
+}
+
+.chat-form textarea::placeholder {
+    color: grey;
+}
+
+/*Hide upload file, and voice recorder buttons when user is typing*/
+.chat-form[typing=true] .file-buttons a{
+     width: 0;
+}
+
+/*Hide submit text button when user is not typing*/
+.chat-form[typing=false] .btn.send-text{
+     padding: 0;
+     width: 0;
+}
